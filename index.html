@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Draw & Replay</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <!--control panel to save, clear canvas, replay and choose color-->
+        <div id="controlPanel" >
+            <div class="btn-group">
+                <!--action buttons-->
+                <button type="button" class="btn btn-primary" onclick="save()">Save(S)</button>
+                <button type="button" class="btn btn-primary" onclick="clearCanvas()">Clear(C)</button>
+                <button type="button" class="btn btn-primary" onclick="replay()">Replay(R)</button>
+                <!--color dropdown-->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                        Select color
+                    </button>
+                    <!--dropdown menu with colors-->
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" style="color:red;" href="#" title="red" onclick="colorSelect(this.title)">Red</a>
+                        <a class="dropdown-item" style="color:blue;" href="#" title="blue" onclick="colorSelect(this.title)">Blue</a>
+                        <a class="dropdown-item" style="color:green;" href="#" title="green" onclick="colorSelect(this.title)">Green</a>
+                        <a class="dropdown-item" style="color:yellow;" href="#" title="yellow" onclick="colorSelect(this.title)">Yellow</a>
+                        <a class="dropdown-item" style="color:black;" href="#" title="black" onclick="colorSelect(this.title)">Black</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal popup-->
+        <div id="modalWindow" class="popup">
+            <!--modal content-->
+            <div class="popupContent">
+                <span class="close">&times;</span>
+                <p style="text-align: center; margin-top: 15px"><h4 style="text-align: center;">Welcome!</h4></p>
+                <p>Draw&Replay is a free whiteboard that lets you draw and replay what you've done!</p>
+                <p>Don't forget to click on <b>Save(S)</b> button after to save you work and <b>Replay(R)</b> button to see the magic!</p>
+                <p><b>P.S.</b> You can use our control panel or your keyboard.</p>
+            </div>
+        </div>
+        <!--canvas-->
+        <canvas id="canvas" style="display:block;">Your browser not supporting canvas</canvas>
+        <!--script loading after canvas initialization-->
+        <script src="js/index.js"></script>
+    </body>
+</html>
